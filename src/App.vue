@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app" class="main-app">
+		<v-layout row>
+			<v-flex>
+				<app-drawer/>
+			</v-flex>
+
+			<v-flex xs12>
+				<app-proxy-list/>
+			</v-flex>
+		</v-layout>
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppDrawer from './components/AppDrawer.vue'
+import AppProxyList from './components/AppProxyList.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+	AppDrawer,
+	AppProxyList
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html, body {
+	height: 100%;
+	margin: 0;
+}
+.main-app {
+	height: 100%;
 }
 </style>
