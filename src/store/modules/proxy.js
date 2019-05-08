@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 export default {
 	state: {
 		proxy: [],
@@ -37,7 +38,7 @@ export default {
 			commit('clearError')
 			commit('setLoading', true)
 			await  axios
-				.get('https://proxyfordevelopers.com/api/proxies/?format=json')
+				.get(`${'https://cors-anywhere.herokuapp.com/'}https://proxyfordevelopers.com/api/proxies/?format=json`)
 				.then(response => {
 					let temp = response.data
 					commit('loadProxy', temp)
